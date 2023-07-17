@@ -7,11 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        newblue: {
+          950: '#050A30',
+          900: '#000C66',
+          800: '#0000FF',
+          500: '#04F9F2',
+        },
+        newfuchsia: {
+          700: '#FF0080',
+        },
       },
+      animation: {
+        'spin-slow': 'spin 4s linear infinite',
+      }
     },
   },
   plugins: [],
