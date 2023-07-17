@@ -1,7 +1,7 @@
 'use client'
 import { QueryClientProvider, useQuery } from '@tanstack/react-query'
 // import Image from 'next/image'
-import Card from './components/card'
+// import Card from './components/card'
 import { api } from './services/api'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -155,23 +155,19 @@ export default function Home() {
   }, [])
   console.log(data)
 
-
-
-// const {data} = useQuery({
-//   queryKey: ['drinks'],
-//   queryFn: getByLetter
-// })
-
   return (
-    <main className='bg-newblue-950 h-full flex flex-col items-center justify-center w-full'>
+    <main className='bg-newblue-950 h-full flex flex-col items-center justify-center w-full py-10'>
       <div className='flex flex-row w-screen items-center mt-60 flex-wrap justify-center gap-10'>
-        {/* <Card/> */}
         {data.length > 0 ? (data.map(({strAlcoholic, strDrink, idDrink, strDrinkThumb}) => (
-          <div key={idDrink} className='relative w-[300px] h-[400px] flex justify-center items-center	bg-black before:absolute before:w-[150px] before:h-[140%] before:bg-gradient-to-b from-blue-500 to-fuchsia-800 before:animate-spin-slow overflow-hidden rounded-2xl after:absolute after:inset-1 after:bg-newblue-950 flex-col'>
-            <h1 className='text-5xl text-white bold relative z-10'>{strDrink}</h1>
-            <p className='text-2xl text-white bold relative z-10'>{strAlcoholic}</p>
+          <div key={idDrink} className='relative w-[300px] h-[400px] flex justify-center items-center	bg-black before:absolute before:w-[150px] before:h-[140%] before:bg-gradient-to-b from-blue-500 to-fuchsia-800 before:animate-spin-slow overflow-hidden rounded-2xl after:absolute after:inset-1 after:bg-newblue-950 flex-col cursor-pointer gap-y-6'>
+            <h1 className='text-4xl text-white bold relative z-10 font-bold'>{strDrink}</h1>
+            {/* <p className='text-xl text-white relative z-10'>{strAlcoholic}</p> */}
+            {/* <p>{strAlcoholic}</p> */}
             <div  className='w-full relative z-10 flex items-center justify-center'>
-              <img src={strDrinkThumb} alt='drink-image' className='w-1/2 h-32'/>
+              <img src={strDrinkThumb} alt='drink-image' className='w-1/2 h-32 rounded-lg'/>
+            </div>
+            <div className='flex items-center justify-center z-10 rounded-lg p-2 mt-4 border-b-4 border border-green-500 hover:border-yellow-200'>
+              <button className='text-white font-semibold '>More informations</button>
             </div>
           </div>
         )
