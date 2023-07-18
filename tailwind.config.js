@@ -17,6 +17,18 @@ module.exports = {
         newfuchsia: {
           700: '#FF0080',
         },
+        violet: {
+          50: '#f1e7ec',
+          100: '#eadae2',
+          200: '#d4b3c3',
+          300: '#750b3c',
+          400: '#690a36',
+          500:'#5e0930',
+          600:'#58082d',
+          700:'#460724',
+          800:'#35051b',
+          900:'#290415',
+           },
       },
       animation: {
         'spin-slow': 'spin 4s linear infinite',
