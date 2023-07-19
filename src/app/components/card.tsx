@@ -1,11 +1,20 @@
 import { Idrink } from "../interfaces/Drink";
+import { useRouter } from "next/navigation";
 
 export interface IAppProps{
   drinksData: Idrink[]
 }
 
 export default function Card({drinksData}: IAppProps) {
-  console.log(drinksData)
+  // const [drinkId, setDrinkId] = useState('');
+  const router = useRouter()
+
+  const goToDrinkDetails = (id: string) => {
+    // setDrinkId(id)
+    router.push(`/details/${id}`);
+  }
+
+  // console.log(drinksData)
   return (       
     <div className='flex flex-row w-screen items-center mt-60 flex-wrap justify-center gap-10'>
     {drinksData.length > 0 ? (drinksData.map(({strAlcoholic, strDrink, idDrink, strDrinkThumb}) => (
@@ -15,7 +24,7 @@ export default function Card({drinksData}: IAppProps) {
           <img src={strDrinkThumb} alt='drink-image' className='w-1/2 h-32 rounded-lg'/>
         </div>
         <div className='flex items-center justify-center z-10 rounded-lg p-2 mt-4 border-b-4 border border-green-500 hover:border-yellow-200'>
-          <button className='text-white font-semibold md:text-lg text-base'>More informations</button>
+          <button onClick={() => goToDrinkDetails(idDrink)} className='text-white font-semibold md:text-lg text-base'>More informations</button>
         </div>
       </div>
     )
