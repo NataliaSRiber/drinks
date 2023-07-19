@@ -26,27 +26,27 @@ export default function Details() {
             <div  className='w-full relative z-10 flex items-center justify-center'>
               <img src={strDrinkThumb} alt='drink-image' className='md:w-1/3 md:h-1/3 rounded-lg w-1/2 h-1/2'/>
             </div>
-            <h1 className="md:text-3xl text-2xl text-center md:py-6 p-2 underline underline-offset-8 decoration-blue-500">{strDrink}</h1>
+            <h1 className="md:text-3xl text-2xl text-center md:py-6 p-2 underline underline-offset-8 decoration-blue-500 font-bold">{strDrink}</h1>
             <div className='flex flex-col text-newfuchsia-700 md:text-xl text-lg gap-y-4'>
-              <p className="md:text-xl text-lg text-start md:py-6 py-1">{strAlcoholic}</p>
+              <p className="md:text-xl text-lg text-start md:py-6 py-2 font-bold">{strAlcoholic}</p>
               <div className='flex flex-row'>
-                <p className="md:text-xl text-lg text-start md:py-6 py-1">Category: </p>
+                <p className="md:text-xl text-lg text-start md:py-6 py-1 font-bold">Category: </p>
                 <p className="md:text-xl text-lg text-start md:py-6 py-1 text-white">{strCategory}</p>           
               </div>
               <div className='flex flex-row'>
-                <p className="md:text-xl text-lg text-start md:py-6 py-1">Type of glass:</p>
+                <p className="md:text-xl text-lg text-start md:py-6 py-1 font-bold">Type of glass:</p>
                 <p className="md:text-xl text-lg text-start md:py-6 py-1 text-white">{strGlass}</p>
               </div>
             </div>
           </div>
           <div>
-            <h3 className='text-newfuchsia-700 md:text-xl text-lg text-start py-6'>Ingredients:</h3>
+            <h3 className='text-newfuchsia-700 md:text-xl text-lg text-start py-6 font-bold'>Ingredients:</h3>
             <ul>
               <li>{strIngredient1}</li>
               <li></li>
             </ul>
-            <h3 className='text-newfuchsia-700 md:text-xl text-lg text-start py-6'>Instructions:</h3>
-            <p className='text-white'>{strInstructions}</p>
+            <h3 className='text-newfuchsia-700 md:text-xl text-lg text-start py-6 font-bold'>Instructions:</h3>
+            <p className='text-white md:text-xl text-lg text-justify'>{strInstructions}</p>
           </div>
         </div>
       ) )}
