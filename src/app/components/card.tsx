@@ -6,15 +6,12 @@ export interface IAppProps{
 }
 
 export default function Card({drinksData}: IAppProps) {
-  // const [drinkId, setDrinkId] = useState('');
   const router = useRouter()
 
   const goToDrinkDetails = (id: string) => {
-    // setDrinkId(id)
     router.push(`/details/${id}`);
   }
 
-  // console.log(drinksData)
   return (       
     <div className='flex flex-row w-screen items-center mt-60 flex-wrap justify-center gap-10'>
     {drinksData.length > 0 ? (drinksData.map(({strDrink, idDrink, strDrinkThumb}) => (
