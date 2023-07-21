@@ -1,9 +1,8 @@
 'use client'
-import { IdrinkDetails, IdrinkDetails } from '@/app/interfaces/Drink'
+import { IdrinkDetails } from '@/app/interfaces/Drink'
 import { api } from '@/app/services/api'
 import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'next/navigation'
-import { useState, useEffect } from 'react'
 
 export default function Details() {
   const getUseParams = useParams();
