@@ -42,3 +42,25 @@ export interface Idrink {
   strMeasure14?: string,
   strMeasure15?: string,
 }
+
+export interface IdrinkDetails {
+  drinks: Idrink[]
+}
+
+export interface IFilteredDrinks {
+  strDrink: string,
+  strDrinkThumb: string,
+  idDrink: string,
+}
+
+export interface IFilteredDrinksList {
+  drinks: IFilteredDrinks[]
+}
+
+export interface ICategory {
+  strCategory: string
+}
+
+export interface ICategories {
+  drinks: ICategory[]
+}
