@@ -1,26 +1,26 @@
 'use client'
-import { Idrink } from '@/app/interfaces/Drink'
+import { IdrinkDetails, IdrinkDetails } from '@/app/interfaces/Drink'
 import { api } from '@/app/services/api'
+import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
 export default function Details() {
   const getUseParams = useParams();
-  const [drinkInfo, setDrinkInfo] = useState<Idrink[]>([])
   
   const getDrinkById = async () => {
-    const response = await api.get(`/lookup.php?i=${getUseParams.drinks}`)
-    setDrinkInfo(response.data.drinks)
+    const response = await api.get<IdrinkDetails>(`/lookup.php?i=${getUseParams.drinks}`)  
     return response.data.drinks;
   }
-  useEffect(() => {
-    getDrinkById()    
-  }, [])
   
-  // console.log(drinkInfo)
+  const {data} = useQuery({
+    queryKey: ['drinkdetails'],
+    queryFn: getDrinkById
+  })
+
   return (       
-    <div className='flex flex-row w-screen items-center pt-60 flex-wrap justify-center gap-10 bg-newblue-950 px-4 md:px-20 pb-20'>
-      {drinkInfo.length && drinkInfo.map(({idDrink, strDrink, strCategory, strAlcoholic, strGlass, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3,strIngredient4,strIngredient5, strIngredient6,strIngredient7, }) => (
+    <div className='flex flex-row w-screen items-center pt-80 flex-wrap justify-center gap-10 bg-newblue-950 px-4 md:px-20 pb-20'>
+      {data && data.map(({idDrink, strDrink, strCategory, strAlcoholic, strGlass, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3,strIngredient4,strIngredient5, strIngredient6,strIngredient7, }) => (
         <div key={idDrink} className='w-full h-full text-white'>
           <div className='flex flex-col gap-y-4'>
             <div  className='w-full relative z-10 flex items-center justify-center'>
@@ -30,12 +30,12 @@ export default function Details() {
             <div className='flex flex-col text-newfuchsia-700 md:text-xl text-lg gap-y-4'>
               <p className="md:text-xl text-lg text-start md:py-6 py-2 font-bold">{strAlcoholic}</p>
               <div className='flex flex-row'>
-                <p className="md:text-xl text-lg text-start md:py-6 py-1 font-bold">Category: </p>
-                <p className="md:text-xl text-lg text-start md:py-6 py-1 text-white">{strCategory}</p>           
+                <p className="md:text-xl text-lg text-start md:py-6 py-1 font-bold">Category:</p>
+                <p className="md:text-xl text-lg text-start md:py-6 py-1 text-white ml-1">{strCategory}</p>           
               </div>
               <div className='flex flex-row'>
                 <p className="md:text-xl text-lg text-start md:py-6 py-1 font-bold">Type of glass:</p>
-                <p className="md:text-xl text-lg text-start md:py-6 py-1 text-white">{strGlass}</p>
+                <p className="md:text-xl text-lg text-start md:py-6 py-1 text-white ml-1">{strGlass}</p>
               </div>
             </div>
           </div>
