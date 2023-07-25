@@ -27,20 +27,11 @@ export default function Nav() {
   const handleClick = (category: any) => {
     setFilteredDrinks(category.strCategory)
     setClickButton(true)
-    router.push('/');
-    setTimeout(() => {
-      setFilteredDrinks('')     
-    }, 500);
-
+    router.push('/')
   }
   const handleClick2 = () => {
     setClickButton(true)
-    if(search) {
-      router.push('/');
-    }
-    setTimeout(() => {
-      setSearch('')     
-    }, 500);
+    router.push('/');
   }
 
   return (       
@@ -55,7 +46,8 @@ export default function Nav() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className='md:w-1/2 w-10/12 h-12 rounded-xl p-4 lg:w-2/3'/>
-        <button 
+        <button
+          disabled={!search}
           className="flex text-white border-b-4 border border-fuchsia-800 hover:border-blue-500 p-4 rounded-lg cursor-pointer ml-2 h-12 items-center"
           onClick={handleClick2}        
         >Search</button>

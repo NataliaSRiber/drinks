@@ -6,18 +6,25 @@ import { useContext } from "react";
 import { SearchContext } from './contexts/search-context'
 
 export default function Home() {
-  const { search, clickButton, setClickButton, filteredDrinks } = useContext(SearchContext)
+  const { search, setSearch, clickButton, setClickButton, filteredDrinks, setFilteredDrinks } = useContext(SearchContext)
 
+
+  console.log(search);
+  console.log(filteredDrinks);
+  console.log(clickButton);
+  
   const getDrinks = async () => {
     if(filteredDrinks) {
       const response = await api.get<any>(`/filter.php?c=${filteredDrinks}`)
       setClickButton(false)
+      setFilteredDrinks('')
       return response.data.drinks
     }
-    
-    if(search) {
+
+    if(search !== '') {
       const response = await api.get<any>(`/search.php?s=${search}`)
       setClickButton(false)
+      setSearch('')  
       return response.data.drinks
     }
   }

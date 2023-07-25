@@ -6,7 +6,7 @@ export const SearchContext = createContext({
   setSearch: (value: string) =>{},
   clickButton: true,
   setClickButton: (value: boolean) =>{},
-  filteredDrinks: 'Cocktail',
+  filteredDrinks: 'Ordinary Drink',
   setFilteredDrinks: (value: string) =>{}, 
 })
 
@@ -17,7 +17,7 @@ interface ProviderProps {
 export function SearchContextProvider({children}: ProviderProps) {
   const [search, setSearch] = useState('')
   const [clickButton, setClickButton] = useState(true)
-  const [filteredDrinks, setFilteredDrinks] = useState('Cocktail')
+  const [filteredDrinks, setFilteredDrinks] = useState('Ordinary Drink')
 
   return(
     <SearchContext.Provider value={{search, setSearch, clickButton, setClickButton, filteredDrinks, setFilteredDrinks}}>
