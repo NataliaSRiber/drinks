@@ -14,6 +14,7 @@ export default function Home() {
       setClickButton(false)
       return response.data.drinks
     }
+    
     if(search) {
       const response = await api.get<any>(`/search.php?s=${search}`)
       setClickButton(false)
