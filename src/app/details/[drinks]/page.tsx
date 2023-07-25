@@ -9,7 +9,7 @@ export default function Details() {
   const getUseParams = useParams();
     
   const getDrinkById = async () => {
-    const response = await api.get<IdrinkDetails>(`/lookup.php?i=${getUseParams.drinks}`) 
+    const response = await api.get<any>(`/lookup.php?i=${getUseParams.drinks}`) 
     return response.data.drinks[0];
   }
   
@@ -18,7 +18,7 @@ export default function Details() {
     queryFn: getDrinkById
   })
     // const getIngredients = data && (Object.keys(data).filter(v => v.startsWith('strIngredient')).map((strIngredient, index) =>(data[strIngredient]))).filter((item)=> item !== null)
-    const getIngredients = data && (Object.keys(data).filter(v => v.startsWith('strIngredient')).map((strIngredient, index) => (data['strMeasure'.concat(index+1)]) + ' '.concat(String(data[strIngredient]))).filter((item)=> item !== 'null null'))
+    const getIngredients = data && (Object.keys(data).filter(v => v.startsWith('strIngredient')).map((strIngredient, index) => (data['strMeasure'.concat(String(index+1))]) + ' '.concat(String(data[strIngredient]))).filter((item)=> item !== 'null null'))
 
    return (       
     <div className='flex flex-row w-screen items-center pt-80 flex-wrap justify-center gap-10 bg-newblue-950 px-4 md:px-20 pb-20'>
@@ -47,7 +47,7 @@ export default function Details() {
           <div>
             <h3 className='text-newfuchsia-700 md:text-xl text-lg text-start py-6 font-bold'>Ingredients:</h3>
             <ul className='list-disc'>
-              {getIngredients && getIngredients.map((ingredient, index) =>
+              {getIngredients && getIngredients.map((ingredient: any, index: number) =>
                 <li key={index}>{ingredient}</li>
               )}
             </ul>
