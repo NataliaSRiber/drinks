@@ -1,12 +1,12 @@
 export interface Idrink {
-  dateModified: string,
-  idDrink: string
-  strAlcoholic: string,
-  strCategory: string,
-  strDrink: string
+  dateModified?: string,
+  idDrink?: string
+  strAlcoholic?: string,
+  strCategory?: string,
+  strDrink?: string
   strDrinkAlternate?: string,
-  strDrinkThumb: string,
-  strGlass: string,
+  strDrinkThumb?: string,
+  strGlass?: string,
   strIBA?: string,
   strImageAttribution?: string,
   strImageSource?: string,
