@@ -4,6 +4,7 @@ import Card from './components/card'
 import { useQuery } from '@tanstack/react-query'
 import { useContext } from "react";
 import { SearchContext } from './contexts/search-context'
+import Loading from './components/loading';
 import NotFound from './components/notFound';
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
     if(search !== '') {
       const response = await api.get<any>(`/search.php?s=${search}`)
       setClickButton(false)
-      setSearch('')  
+      setSearch('') 
       return response.data.drinks
     }
   }
@@ -33,8 +34,9 @@ export default function Home() {
 
   return (
       <main className='bg-newblue-950 h-full flex flex-col items-center justify-center w-full py-10 mt-44'>
+        {drinks === null && <NotFound />}
+        {drinks === undefined && <Loading/>}
         <Card drinksData={drinks}/>
-        {/* <NotFound /> */}
       </main>
   )
 }
