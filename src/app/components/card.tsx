@@ -1,5 +1,6 @@
 import { IFilteredDrinks} from "../interfaces/Drink";
 import { useRouter } from "next/navigation";
+import Loading from "./loading";
 
 export interface IAppProps{
   drinksData?: IFilteredDrinks[]
@@ -14,7 +15,7 @@ export default function Card({drinksData}: IAppProps) {
 
   return (       
     <div className='flex flex-row w-screen items-center flex-wrap justify-center gap-10 pt-12'>
-    {drinksData && (drinksData.map(({strDrink, idDrink, strDrinkThumb}) => (
+    {drinksData ? drinksData.map(({strDrink, idDrink, strDrinkThumb}) => (
       <div key={idDrink} className='relative w-[260px] md:w-[300px] h-[450px] flex justify-evenly items-center bg-black before:absolute before:w-[150px] before:h-[140%] before:bg-gradient-to-b from-blue-500 to-fuchsia-800 before:animate-spin-slow overflow-hidden rounded-2xl after:absolute after:inset-1 after:bg-newblue-950 flex-col gap-y-4'>
         <h1 className='md:text-3xl text-2xl text-white bold relative z-10 font-bold w-full text-center px-3'>{strDrink}</h1>
         <div  className='w-full relative z-10 flex items-center justify-center'>
@@ -25,7 +26,9 @@ export default function Card({drinksData}: IAppProps) {
         </div>
       </div>
     )
-    ))
+    )
+    :
+    <Loading />
   }
   </div>
   )
