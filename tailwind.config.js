@@ -7,6 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        '3xl': [
+          '0 0 7px #ff0dbf',
+          '0 0 10px #ff0dbf',
+          '0 0 21px #ff0dbf',
+        ],
+        '4xl': [
+          '0 0 7px #ff0dbf',
+          '0 0 10px #ff0dbf',
+          '0 0 21px #ff0dbf',
+          '0 0 42px #ff0dbf',
+        ]
+    },
       colors: {
         yellowneon: {
           500: '#ccff15'
@@ -48,7 +61,7 @@ module.exports = {
       },
       hueRotate: {
         360: '360deg',
-      }
+      },
     },
   },
   plugins: [],
