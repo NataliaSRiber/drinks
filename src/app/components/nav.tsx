@@ -29,7 +29,7 @@ export default function Nav() {
     setClickButton(true)
     router.push('/')
   }
-  const handleClick2 = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleClick2 = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setClickButton(true)
     router.push('/');
@@ -41,8 +41,7 @@ export default function Nav() {
         <Link href='/'>
           <Image src={logo} alt="logo" width={100} height={100}/>
         </Link>
-      <div className="w-full h-16 flex flex-row items-center justify-center">
-        <form>
+        <form className="w-full h-16 flex flex-row items-center justify-center" onSubmit={handleClick2}>
           <input placeholder='Type a cocktail name'
           type="text"
           value={search}
@@ -51,13 +50,11 @@ export default function Nav() {
           <button
             disabled={!search}
             className="flex text-white border-b-4 border border-fuchsia-800 hover:border-blue-500 p-4 rounded-lg cursor-pointer ml-2 h-12 items-center"
-            onClick={handleClick2}
             type="submit"   
           >
             Search
           </button>
         </form>
-      </div>
       </div>
       <div className="w-full">
         <ul className="flex flex-row text-white border-b-4 border border-blue-500 w-full justify-around h-20 items-center">
