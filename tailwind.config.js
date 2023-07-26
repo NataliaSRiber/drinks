@@ -8,6 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        yellowneon: {
+          500: '#ccff15'
+        },
+        greenneon: {
+          500: '#49fb35'
+        },
+        
+        pinkneon: {
+          500: '#ff0dbf'
+        },
+        blueneon: {
+          500: '#6699f6'
+        },
         newblue: {
           950: '#050A30',
           900: '#000C66',
@@ -32,6 +45,9 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 4s linear infinite',
+      },
+      hueRotate: {
+        360: '360deg',
       }
     },
   },
