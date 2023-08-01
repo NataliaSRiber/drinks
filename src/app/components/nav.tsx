@@ -58,7 +58,7 @@ export default function Nav() {
           className='md:w-1/2 w-10/12 h-12 rounded-xl md:p-4 p-2 lg:w-2/3 focus:outline-none'/>
           <button
             disabled={!search}
-            className="flex disabled:drop-shadow-none disabled:border-white disabled:cursor-auto drop-shadow-3xl text-white border-b-4 border border-pinkneon-500 hover:drop-shadow-5xl hover:border-yellowneon-500 md:p-4 p-2 rounded-lg cursor-pointer ml-2 h-12 items-center font-medium"
+            className="flex disabled:drop-shadow-none disabled:border-white disabled:cursor-auto drop-shadow-3xl text-white border-b-4 border border-pinkneon-500 hover:drop-shadow-5xl hover:border-yellowneon-500 md:p-4 p-2 rounded-lg cursor-pointer ml-2 h-12 items-center font-bold"
             type="submit"   
           >
             Search
@@ -81,7 +81,7 @@ export default function Nav() {
       {/* <ul className="flex-row text-white border-y-2 border-yellowneon-500 w-full grid gap-4 md:grid-cols-6 md:grid-rows-2 p-2"> */}
         {/* <ul className="flex flex-row text-white border-y-2 border-yellowneon-500 w-full justify-evenly h-20 items-center"> */}
           {categories && categories.map((category: any, index: number )=> 
-          <button key={index} className="h-full px-1 hover:text-blueneon-300 hover:drop-shadow-8xl font-bold" onClick={()=> handleClick(category)}>{category.strCategory}</button>
+          <button key={index} className="h-full px-1 hover:text-blueneon-300 hover:drop-shadow-8xl font-bold text-lg" onClick={()=> handleClick(category)}>{category.strCategory}</button>
           )}
         </ul>
       </div>
