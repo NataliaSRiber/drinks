@@ -74,14 +74,14 @@ export default function Nav() {
         {!open && <GiHamburgerMenu color="white" />}
       </div>
       <ul
-        className={`top-0 flex md:flex-row text-white border-y-2 border-yellowneon-500 md:justify-evenly md:h-20 flex-col fixed left-0 z-[-1] w-full bg-newblue-950 pb-12 pl-9 transition-all duration-[1000ms] ease-in md:static md:z-auto md:flex md:w-auto md:items-center md:pb-0 md:pl-0 ${
+        className={`top-0 flex md:flex-row text-white border-y-4 border-blueneon-300 md:justify-evenly md:h-20 flex-col fixed left-0 z-[-1] w-full bg-newblue-950 pb-12 pl-9 transition-all duration-[1000ms] ease-in md:static md:z-auto md:flex md:w-auto md:items-center md:pb-0 md:pl-0 ${
           open ? 'left-0 h-full' : 'left-[-100%] h-full'
         }`}
       >
       {/* <ul className="flex-row text-white border-y-2 border-yellowneon-500 w-full grid gap-4 md:grid-cols-6 md:grid-rows-2 p-2"> */}
         {/* <ul className="flex flex-row text-white border-y-2 border-yellowneon-500 w-full justify-evenly h-20 items-center"> */}
           {categories && categories.map((category: any, index: number )=> 
-          <button key={index} className="h-full px-1 hover:text-yellowneon-500 hover:drop-shadow-5xl font-bold" onClick={()=> handleClick(category)}>{category.strCategory}</button>
+          <button key={index} className="h-full px-1 hover:text-blueneon-300 hover:drop-shadow-8xl font-bold" onClick={()=> handleClick(category)}>{category.strCategory}</button>
           )}
         </ul>
       </div>
