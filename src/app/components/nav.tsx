@@ -48,7 +48,7 @@ export default function Nav() {
           className='md:w-1/2 w-10/12 h-12 rounded-xl p-4 lg:w-2/3 focus:outline-none'/>
           <button
             disabled={!search}
-            className="flex disabled:drop-shadow-none disabled:border-white disabled:cursor-auto drop-shadow-4xl text-white border-b-4 border border-pinkneon-500 hover:drop-shadow-6xl hover:border-yellowneon-500 p-4 rounded-lg cursor-pointer ml-2 h-12 items-center"
+            className="flex disabled:drop-shadow-none disabled:border-white disabled:cursor-auto drop-shadow-3xl text-white border-b-4 border border-pinkneon-500 hover:drop-shadow-5xl hover:border-yellowneon-500 p-4 rounded-lg cursor-pointer ml-2 h-12 items-center"
             type="submit"   
           >
             Search
