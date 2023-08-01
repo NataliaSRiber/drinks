@@ -30,7 +30,25 @@ module.exports = {
           '0 0 10px #ccff15',
           '0 0 21px #ccff15',
           '0 0 42px #ccff15',
-        ]
+        ],
+        '7xl': [
+          '0 0 7px #49fb35',
+          '0 0 10px #49fb35',
+          // '0 0 21px #49fb35',
+          // '0 0 30px #49fb35',
+        ],
+        '8xl': [
+          '0 0 7px #6699f6',
+          '0 0 10px #6699f6',
+          // '0 0 21px #6699f6',
+          // '0 0 30px #6699f6',
+        ],
+        '9xl': [
+          '0 0 7px #7d12ff',
+          '0 0 10px #7d12ff',
+          '0 0 21px #7d12ff',
+          // '0 0 30px #7d12ff',
+        ],
     },
       colors: {
         yellowneon: {
@@ -44,7 +62,12 @@ module.exports = {
           500: '#ff0dbf'
         },
         blueneon: {
+          300: '#00f9ff',
           500: '#6699f6'
+        },
+ 
+        purpleneon: {
+          500: '#7d12ff'
         },
         newblue: {
           950: '#050A30',
