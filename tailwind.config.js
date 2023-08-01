@@ -18,6 +18,18 @@ module.exports = {
           '0 0 10px #ff0dbf',
           '0 0 21px #ff0dbf',
           '0 0 42px #ff0dbf',
+        ],
+        '5xl': [
+          '0 0 7px #ccff15',
+          '0 0 10px #ccff15',
+          // '0 0 21px #ccff15',
+          // '0 0 42px #ccff15',
+        ],
+        '6xl': [
+          '0 0 7px #ccff15',
+          '0 0 10px #ccff15',
+          '0 0 21px #ccff15',
+          '0 0 42px #ccff15',
         ]
     },
       colors: {
