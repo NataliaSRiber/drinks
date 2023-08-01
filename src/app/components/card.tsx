@@ -1,7 +1,5 @@
 import { IFilteredDrinks} from "../interfaces/Drink";
 import { useRouter } from "next/navigation";
-import Loading from "./loading";
-import NotFound from "./notFound";
 
 export interface IAppProps{
   drinksData?: IFilteredDrinks[]
