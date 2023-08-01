@@ -1,10 +1,10 @@
 import Nav from './components/nav'
 import './globals.css'
-import { BioRhyme } from 'next/font/google'
+import { Lato } from 'next/font/google'
 import Providers from './providers'
 import { SearchContextProvider } from './contexts/search-context'
 
-const bioRhyme = BioRhyme({ subsets: ['latin'],  weight: [ '200', '300', '400', '700', '800'], display: 'swap', variable: '--font-bio-rhyme'
+const lato = Lato({ subsets: ['latin'],  weight: [ '100', '300', '400', '700', '900'], display: 'swap', variable: '--font-bio-rhyme'
 })
 
 export const metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${bioRhyme.variable} bg-newblue-950`}>
+      <body className={`${lato.className} bg-newblue-950`}>
         <SearchContextProvider>
           <Providers>
             <Nav />
