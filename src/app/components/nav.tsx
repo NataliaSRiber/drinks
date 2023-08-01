@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import logo from '../assets/logo1.png'
+import logo from '../assets/logo.png'
 import Link from "next/link";
 import { api } from "../services/api";
 import { ICategories } from "../interfaces/Drink";
@@ -35,7 +35,7 @@ export default function Nav() {
   }
 
   return (       
-    <div className='w-full flex items-center justify-start fixed top-0 h-100 shadow-md bg-newblue-950 z-20 flex-col gap-y-4'>
+    <div className='w-full flex items-center justify-start fixed top-0 min-h-100 shadow-md bg-newblue-950 z-20 flex-col gap-y-4'>
       <div className="flex w-full top-0 md:flex-row items-center justify-center flex-col">
         <Link href='/'>
           <Image src={logo} alt="logo" className="md:w-[100px] md:h-[100px] w-[50px] h-[50px]"/>
