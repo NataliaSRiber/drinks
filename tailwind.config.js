@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     extend: {
       dropShadow: {
+        '2xl': [
+          '0 0 7px #fff',
+        ],
         '3xl': [
           '0 0 7px #ff0dbf',
           '0 0 10px #ff0dbf',
