@@ -1,32 +1,43 @@
-import { IFilteredDrinks} from "../interfaces/Drink";
-import { useRouter } from "next/navigation";
+import Image from 'next/image'
+import { IFilteredDrinks } from '../interfaces/Drink'
+import Link from 'next/link'
 
-export interface IAppProps{
+export interface IAppProps {
   drinksData?: IFilteredDrinks[]
 }
 
-export default function Card({drinksData}: IAppProps) {
-  const router = useRouter()
-
-  const goToDrinkDetails = (id: string) => {
-    router.push(`/details/${id}`);
-  }
-  
-  return (       
-    <div className='flex flex-row w-screen items-center flex-wrap justify-center gap-10 pt-12'>
-    {drinksData?.map(({strDrink, idDrink, strDrinkThumb}) => (
-      <div key={idDrink} className='relative w-[260px] md:w-[300px] h-[450px] flex justify-evenly items-center bg-black before:absolute before:w-[150px] before:h-[140%] before:bg-gradient-to-b from-purpleneon-500 to-pinkneon-500 before:animate-spin-slow overflow-hidden rounded-2xl after:absolute after:inset-1 after:bg-newblue-950 flex-col gap-y-4'>
-        <h1 className='md:text-3xl text-2xl text-white bold relative z-10 font-bold w-full text-center px-3'>{strDrink}</h1>
-        <div  className='w-full relative z-10 flex items-center justify-center'>
-          <img src={strDrinkThumb} alt='drink-image' className='w-2/3 h-40 rounded-lg'/>
+export default function Card({ drinksData }: IAppProps) {
+  return (
+    <div className="flex w-screen flex-row flex-wrap items-center justify-center gap-10 pt-12">
+      {drinksData?.map(({ strDrink, idDrink, strDrinkThumb }) => (
+        <div
+          key={idDrink}
+          className="relative flex h-[450px] w-[260px] flex-col items-center justify-evenly gap-y-4 overflow-hidden rounded-2xl bg-black from-purpleneon-500 to-pinkneon-500 before:absolute before:h-[140%] before:w-[150px] before:animate-spin-slow before:bg-gradient-to-b after:absolute after:inset-1 after:bg-newblue-950 md:w-[300px]"
+        >
+          <h1 className="bold relative z-10 w-full px-3 text-center text-2xl font-bold text-white md:text-3xl">
+            {strDrink}
+          </h1>
+          <div className="relative z-10 flex w-full items-center justify-center">
+            <Image
+              src={strDrinkThumb}
+              placeholder="blur"
+              blurDataURL={strDrinkThumb}
+              width={200}
+              height={200}
+              alt="drink-image"
+              className="h-40 w-2/3 rounded-lg"
+            />
+          </div>
+          <div className="z-10 mt-4 flex items-center justify-center rounded-lg border border-b-4 border-purpleneon-500 p-2">
+            <Link
+              href={`/details/${idDrink}`}
+              className="cursor-pointer bg-purpleneon-500 text-base font-semibold text-white opacity-90 drop-shadow-9xl hover:opacity-100 md:text-lg"
+            >
+              More informations
+            </Link>
+          </div>
         </div>
-        <div className='flex items-center justify-center z-10 rounded-lg p-2 mt-4 border-b-4 border border-purpleneon-500'>
-          <button onClick={() => goToDrinkDetails(idDrink)} className='text-white font-semibold md:text-lg text-base cursor-pointer drop-shadow-9xl bg-purpleneon-500 opacity-90 hover:opacity-100'>More informations</button>
-        </div>
-      </div>
-    )
-    )
-  }
-  </div>
+      ))}
+    </div>
   )
 }
