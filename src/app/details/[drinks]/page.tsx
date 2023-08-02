@@ -49,7 +49,7 @@ export default function Details() {
             <h1 className="py-4 text-center text-2xl  font-bold underline decoration-blueneon-300 underline-offset-8 md:text-3xl">
               {data.strDrink}
             </h1>
-            <div className="text-newfuchsia-700 flex flex-col gap-y-4 text-lg md:text-lg">
+            <div className="flex flex-col gap-y-4 text-lg text-newfuchsia-700 md:text-lg">
               <p className="text-md text-start font-bold text-blueneon-300 md:text-lg">
                 {data.strAlcoholic}
               </p>
@@ -68,7 +68,7 @@ export default function Details() {
             </div>
           </div>
           <div className="flex flex-col gap-y-4">
-            <h3 className="text-newfuchsia-700 text-start text-lg font-bold md:text-xl">
+            <h3 className="text-start text-lg font-bold text-newfuchsia-700 md:text-xl">
               Ingredients:
             </h3>
             <ul className="list-disc px-5">
@@ -78,7 +78,7 @@ export default function Details() {
                   <li key={index}>{ingredient}</li>
                 ))}
             </ul>
-            <h3 className="text-newfuchsia-700 text-start text-lg font-bold md:text-xl">
+            <h3 className="text-start text-lg font-bold text-newfuchsia-700 md:text-xl">
               Instructions:
             </h3>
             <p className="text-justify text-lg text-white md:text-xl">
