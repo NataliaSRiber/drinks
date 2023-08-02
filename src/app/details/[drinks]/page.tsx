@@ -73,6 +73,7 @@ export default function Details() {
             </h3>
             <ul className="list-disc px-5">
               {getIngredients &&
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 getIngredients.map((ingredient: any, index: number) => (
                   <li key={index}>{ingredient}</li>
                 ))}
