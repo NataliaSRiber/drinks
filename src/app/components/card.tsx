@@ -17,15 +17,16 @@ export default function Card({ drinksData }: IAppProps) {
           <h1 className="bold relative z-10 w-full px-3 text-center text-2xl font-bold text-white md:text-3xl">
             {strDrink}
           </h1>
-          <div className="relative z-10 flex w-full items-center justify-center">
+          <div className="relative z-10 flex h-40 w-2/3 items-center justify-center">
             <Image
               src={strDrinkThumb}
+              priority={true}
               placeholder="blur"
               blurDataURL={strDrinkThumb}
               width={200}
               height={200}
               alt="drink-image"
-              className="h-40 w-2/3 rounded-lg"
+              className="rounded-lg object-contain"
             />
           </div>
           <div className="z-10 mt-4 flex items-center justify-center rounded-lg border border-b-4 border-purpleneon-500 p-2">

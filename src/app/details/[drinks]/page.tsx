@@ -2,6 +2,7 @@
 import BackButton from '@/app/components/backbutton'
 import { api } from '@/app/services/api'
 import { useQuery } from '@tanstack/react-query'
+import Image from 'next/image'
 import { useParams } from 'next/navigation'
 
 export default function Details() {
@@ -34,10 +35,15 @@ export default function Details() {
         <div key={data.idDrink} className="h-full w-full text-white">
           <div className="flex flex-col gap-y-4">
             <div className="relative z-10 flex w-full items-center justify-center drop-shadow-2xl">
-              <img
+              <Image
                 src={data.strDrinkThumb}
+                priority={true}
+                placeholder="blur"
+                blurDataURL={data.strDrinkThumb}
+                width={200}
+                height={200}
                 alt="drink-image"
-                className="h-2/3 w-2/3 rounded-lg md:h-1/3 md:w-1/3"
+                className="h-2/3 w-2/3 rounded-lg object-contain md:h-1/3 md:w-1/3"
               />
             </div>
             <h1 className="py-4 text-center text-2xl  font-bold underline decoration-blueneon-300 underline-offset-8 md:text-3xl">
