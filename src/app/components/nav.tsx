@@ -78,29 +78,35 @@ export default function Nav() {
       <div className="w-full">
         <div
           onClick={() => setOpen(!open)}
-          className="absolute right-8 top-2 cursor-pointer text-3xl md:hidden"
+          className="absolute right-[5%] top-3 z-10 cursor-pointer text-3xl md:hidden"
         >
           {open && <AiOutlineClose color="white" />}
           {!open && <GiHamburgerMenu color="white" />}
         </div>
-        <ul
-          className={`fixed left-0 top-0 z-[-1] flex w-full flex-col border-y-4 border-blueneon-300 bg-newblue-950 pb-12 pl-9 text-white transition-all duration-[1000ms] ease-in md:static md:z-auto md:flex md:h-20 md:w-auto md:flex-row md:items-center md:justify-evenly md:pb-0 md:pl-0 ${
-            open ? 'left-0 h-full' : 'left-[-100%] h-full'
-          }`}
+        <div
+          data-open={open}
+          className="fixed left-[-100%] top-0 z-0 flex h-full w-full opacity-0 transition-all duration-300 ease-in data-[open=true]:left-0
+            data-[open=true]:opacity-100 md:static md:z-auto md:flex md:opacity-100"
         >
-          {/* <ul className="flex-row text-white border-y-2 border-yellowneon-500 w-full grid gap-4 md:grid-cols-6 md:grid-rows-2 p-2"> */}
-          {/* <ul className="flex flex-row text-white border-y-2 border-yellowneon-500 w-full justify-evenly h-20 items-center"> */}
-          {categories &&
-            categories.map((category: object, index: number) => (
-              <button
-                key={index}
-                className="h-full px-1 text-lg font-bold hover:text-blueneon-300 hover:drop-shadow-8xl"
-                onClick={() => handleClick(category)}
-              >
-                {category.strCategory}
-              </button>
-            ))}
-        </ul>
+          <ul className="flex w-full flex-col border-y-4 border-blueneon-300 bg-newblue-950 bg-opacity-95 text-white md:h-20 md:flex-row md:items-center md:justify-evenly md:pb-0 md:pl-0">
+            {/* <ul className="flex-row text-white border-y-2 border-yellowneon-500 w-full grid gap-4 md:grid-cols-6 md:grid-rows-2 p-2"> */}
+            {/* <ul className="flex flex-row text-white border-y-2 border-yellowneon-500 w-full justify-evenly h-20 items-center"> */}
+            {categories &&
+              categories.map((category: object, index: number) => (
+                <button
+                  key={index}
+                  className="h-full px-1 text-lg font-bold hover:text-blueneon-300 hover:drop-shadow-8xl"
+                  onClick={() => handleClick(category)}
+                >
+                  {category.strCategory}
+                </button>
+              ))}
+          </ul>
+          <div
+            className="h-screen w-[20%] bg-transparent md:hidden"
+            onClick={() => setOpen(false)}
+          ></div>
+        </div>
       </div>
     </div>
   )
