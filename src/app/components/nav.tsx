@@ -34,6 +34,7 @@ export default function Nav() {
     queryFn: getCategories,
   })
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleClick = (category: any) => {
     setFilteredDrinks(category.strCategory)
     setClickButton(true)
@@ -92,6 +93,7 @@ export default function Nav() {
             {/* <ul className="flex-row text-white border-y-2 border-yellowneon-500 w-full grid gap-4 md:grid-cols-6 md:grid-rows-2 p-2"> */}
             {/* <ul className="flex flex-row text-white border-y-2 border-yellowneon-500 w-full justify-evenly h-20 items-center"> */}
             {categories &&
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               categories.map((category: any, index: number) => (
                 <button
                   key={index}
