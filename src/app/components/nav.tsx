@@ -91,7 +91,7 @@ export default function Nav() {
           {/* <ul className="flex-row text-white border-y-2 border-yellowneon-500 w-full grid gap-4 md:grid-cols-6 md:grid-rows-2 p-2"> */}
           {/* <ul className="flex flex-row text-white border-y-2 border-yellowneon-500 w-full justify-evenly h-20 items-center"> */}
           {categories &&
-            categories.map((category: any, index: number) => (
+            categories.map((category: object, index: number) => (
               <button
                 key={index}
                 className="h-full px-1 text-lg font-bold hover:text-blueneon-300 hover:drop-shadow-8xl"
