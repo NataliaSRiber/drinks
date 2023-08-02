@@ -28,6 +28,9 @@ module.exports = {
         '9xl': ['0 0 7px #7d12ff', '0 0 10px #7d12ff', '0 0 21px #7d12ff'],
       },
       colors: {
+        newfuchsia: {
+          700: '#FF0080',
+        },
         yellowneon: {
           500: '#ccff15',
         },
