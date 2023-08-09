@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${lato.className} bg-newblue-950`}>
+      <body className={`${lato.className} overflow-x-hidden bg-newblue-950`}>
         <SearchContextProvider>
           <Providers>
             <Nav />
