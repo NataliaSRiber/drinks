@@ -10,6 +10,7 @@ import { SearchContext } from '../contexts/search-context'
 import { useRouter } from 'next/navigation'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
+import Button from './button'
 
 export default function Nav() {
   const { search, setSearch, setFilteredDrinks, setClickButton } =
@@ -51,13 +52,16 @@ export default function Nav() {
       <div className="top-0 flex w-full flex-col items-center justify-center md:flex-row">
         <Link href="/">
           <Image
+            priority={true}
+            width={2000}
+            height={2000}
             src={logo}
             alt="logo"
             className="h-[50px] w-[50px] md:h-[100px] md:w-[100px]"
           />
         </Link>
         <form
-          className="flex h-16 w-full flex-row items-center justify-center px-2"
+          className="flex h-16 w-full flex-row items-center justify-center gap-3 px-2"
           onSubmit={handleClick2}
         >
           <input
@@ -67,13 +71,13 @@ export default function Nav() {
             onChange={(e) => setSearch(e.target.value)}
             className="h-12 w-10/12 rounded-xl p-2 focus:outline-none md:w-1/2 md:p-4 lg:w-2/3"
           />
-          <button
+          <Button
             disabled={!search}
-            className="ml-2 flex h-12 cursor-pointer items-center rounded-lg border border-b-4 border-pinkneon-500 p-2 font-medium text-white drop-shadow-3xl hover:border-yellowneon-500 hover:drop-shadow-5xl disabled:cursor-auto disabled:border-white disabled:drop-shadow-none md:p-4"
+            className="h-12 border-pinkneon-500 font-medium opacity-100 drop-shadow-3xl hover:border-yellowneon-500 hover:drop-shadow-5xl disabled:cursor-auto disabled:border-white disabled:drop-shadow-none md:p-4"
             type="submit"
           >
             Search
-          </button>
+          </Button>
         </form>
       </div>
       <div className="w-full">

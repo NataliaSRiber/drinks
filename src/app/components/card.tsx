@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { IFilteredDrinks } from '../interfaces/Drink'
 import Link from 'next/link'
+import Button from './button'
 
 export interface IAppProps {
   drinksData?: IFilteredDrinks[]
@@ -30,11 +31,10 @@ export default function Card({ drinksData }: IAppProps) {
             />
           </div>
           <div className="z-10 mt-4 flex items-center justify-center rounded-lg border border-b-4 border-purpleneon-500 p-2">
-            <Link
-              href={`/details/${idDrink}`}
-              className="cursor-pointer bg-purpleneon-500 text-base font-semibold text-white opacity-90 drop-shadow-9xl hover:opacity-100 md:text-lg"
-            >
-              More informations
+            <Link href={`/details/${idDrink}`}>
+              <Button className="border-none bg-purpleneon-500 p-0 text-base font-semibold drop-shadow-9xl md:text-lg">
+                More informations
+              </Button>
             </Link>
           </div>
         </div>
