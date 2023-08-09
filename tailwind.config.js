@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -16,14 +17,14 @@ module.exports = {
           '0 0 21px #ff0dbf',
           '0 0 42px #ff0dbf',
         ],
-        '5xl': ['0 0 7px #ccff15', '0 0 10px #ccff15'],
+        '5xl': ['0 0 7px #ccff15', '0 0 10px #ccff15', '0 0 21px #ccff15'],
         '6xl': [
           '0 0 7px #ccff15',
           '0 0 10px #ccff15',
           '0 0 21px #ccff15',
           '0 0 42px #ccff15',
         ],
-        '7xl': ['0 0 7px #49fb35', '0 0 10px #49fb35'],
+        '7xl': ['0 0 7px #49fb35', '0 0 10px #49fb35', '0 0 21px #49fb35'],
         '8xl': ['0 0 7px #00f9ff', '0 0 10px #00f9ff', '0 0 21px #00f9ff'],
         '9xl': ['0 0 7px #7d12ff', '0 0 10px #7d12ff', '0 0 21px #7d12ff'],
       },
