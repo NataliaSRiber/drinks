@@ -93,7 +93,7 @@ export default function Details() {
         href="/"
         className="fixed bottom-2 right-2 flex flex-col gap-10 bg-newblue-950"
       >
-        <Button className="w-20 justify-evenly border-blueneon-300 p-2 font-semibold text-newblue-950 opacity-100 drop-shadow-8xl md:w-24">
+        <Button className="w-20 justify-evenly border-blueneon-300 p-2 font-semibold text-newblue-950 drop-shadow-8xl md:w-24">
           <Image src={back} alt="back-arrow" />
           Back
         </Button>

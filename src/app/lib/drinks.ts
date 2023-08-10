@@ -1,28 +1,9 @@
 import { api } from '../services/api'
 
 export async function getDrinks(context: any) {
-  const {
-    filteredDrinks,
-    search,
-    setClickButton,
-    setFilteredDrinks,
-    setSearch,
-  } = context
+  const { filteredDrinks, search, setClickButton, setSearch } = context
 
-  if (filteredDrinks) {
-    try {
-      const {
-        data: { drinks },
-      } = await api.get(`/filter.php?c=${filteredDrinks}`)
-      setClickButton(false)
-      setFilteredDrinks('')
-      return drinks
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  if (search !== '') {
+  if (search) {
     try {
       const {
         data: { drinks },
@@ -33,5 +14,16 @@ export async function getDrinks(context: any) {
     } catch (error) {
       console.error(error)
     }
+  }
+
+  try {
+    const {
+      data: { drinks },
+    } = await api.get(`/filter.php?c=${filteredDrinks}`)
+    setClickButton(false)
+
+    return drinks
+  } catch (error) {
+    console.error(error)
   }
 }

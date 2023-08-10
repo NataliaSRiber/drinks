@@ -13,8 +13,13 @@ import { AiOutlineClose } from 'react-icons/ai'
 import Button from './button'
 
 export default function Nav() {
-  const { search, setSearch, setFilteredDrinks, setClickButton } =
-    useContext(SearchContext)
+  const {
+    search,
+    setSearch,
+    filteredDrinks,
+    setFilteredDrinks,
+    setClickButton,
+  } = useContext(SearchContext)
   const router = useRouter()
   const [open, setOpen] = useState<boolean>(false)
 
@@ -41,6 +46,7 @@ export default function Nav() {
     setClickButton(true)
     router.push('/')
   }
+
   const handleClick2 = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setClickButton(true)
@@ -94,14 +100,13 @@ export default function Nav() {
             data-[open=true]:opacity-100 md:static md:z-auto md:flex md:opacity-100"
         >
           <ul className="flex w-full flex-col border-y-4 border-blueneon-300 bg-newblue-950 bg-opacity-95 text-white md:h-20 md:flex-row md:items-center md:justify-evenly md:pb-0 md:pl-0">
-            {/* <ul className="flex-row text-white border-y-2 border-yellowneon-500 w-full grid gap-4 md:grid-cols-6 md:grid-rows-2 p-2"> */}
-            {/* <ul className="flex flex-row text-white border-y-2 border-yellowneon-500 w-full justify-evenly h-20 items-center"> */}
             {categories &&
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               categories.map((category: any, index: number) => (
                 <button
                   key={index}
-                  className="h-full px-1 text-lg font-bold hover:text-blueneon-300 hover:drop-shadow-8xl"
+                  data-selected={category.strCategory === filteredDrinks}
+                  className="h-full px-1 text-lg font-bold hover:text-blueneon-300 hover:drop-shadow-8xl data-[selected=true]:text-blueneon-300 data-[selected=true]:drop-shadow-8xl"
                   onClick={() => handleClick(category)}
                 >
                   {category.strCategory}

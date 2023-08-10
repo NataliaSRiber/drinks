@@ -81,12 +81,12 @@ export default function Pagination(props: any) {
                 >
                   {pageNumber === 5 ? (
                     <select
-                      id="page-select"
                       onChange={(e) => onChange(e)}
+                      defaultValue=""
                       data-page={page >= 5 && page < numberOfPages}
                       className="w-6 cursor-pointer appearance-none border-newblue-950 bg-newblue-950 text-center text-2xl text-white focus:bg-newblue-950 focus:outline-none data-[page=true]:text-pinkneon-500"
                     >
-                      <option value="" selected hidden>
+                      <option value="" hidden>
                         ...
                       </option>
                       {numberOfPagesArray
@@ -104,6 +104,7 @@ export default function Pagination(props: any) {
                     </select>
                   ) : (
                     <button
+                      key={pageNumber}
                       data-page={pageNumber === page}
                       className=" text-white hover:drop-shadow-3xl data-[page=true]:text-lg data-[page=true]:font-extrabold data-[page=true]:drop-shadow-3xl"
                       onClick={() => togglePage(pageNumber)}
@@ -114,6 +115,7 @@ export default function Pagination(props: any) {
                 </div>
               )
             }
+
             return (
               <div
                 key={pageNumber}
@@ -152,11 +154,10 @@ export default function Pagination(props: any) {
         Cocktails per page:
         <select
           onChange={(e) => onChange2(e)}
+          defaultValue={elementsPerPage}
           className="cursor-pointer rounded-lg border-2 border-white bg-newblue-950 text-center text-white focus:bg-newblue-950 focus:outline-none"
         >
-          <option value="10" selected>
-            10
-          </option>
+          <option value="10">10</option>
           <option value="20">20</option>
           <option value="30">30</option>
           <option value="40">40</option>
