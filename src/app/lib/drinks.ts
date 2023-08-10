@@ -1,11 +1,5 @@
 import { api } from '../services/api'
 
-export function pagination(drinks: any, page = 1, elementsPerPage = 10) {
-  const finalElement = page * elementsPerPage
-  const initialElement = finalElement - elementsPerPage
-  return drinks.slice(initialElement, finalElement)
-}
-
 export async function getDrinks(context: any) {
   const {
     filteredDrinks,
