@@ -25,7 +25,12 @@ module.exports = {
           '0 0 42px #ccff15',
         ],
         '7xl': ['0 0 7px #49fb35', '0 0 10px #49fb35', '0 0 21px #49fb35'],
-        '8xl': ['0 0 7px #00f9ff', '0 0 10px #00f9ff', '0 0 21px #00f9ff'],
+        '8xl': [
+          '0 0 7px #00f9ff',
+          '0 0 10px #00f9ff',
+          '0 0 21px #00f9ff',
+          '0 0 42px #00f9ff',
+        ],
         '9xl': ['0 0 7px #7d12ff', '0 0 10px #7d12ff', '0 0 21px #7d12ff'],
       },
       colors: {
