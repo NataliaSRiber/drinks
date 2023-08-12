@@ -8,6 +8,7 @@ import Loading from './components/loading'
 import NotFound from './components/notFound'
 import { getDrinks } from './lib/drinks'
 import Pagination from './components/pagination'
+import UpButton from './components/upButton'
 
 export default function Home() {
   const [drinksPerPage, setDrinksPerPage] = useState<any>([])
@@ -30,6 +31,7 @@ export default function Home() {
         <>
           <Pagination drinks={drinks} setDrinksPerPage={setDrinksPerPage} />
           <Card drinksData={drinksPerPage} />
+          <UpButton></UpButton>
         </>
       )}
     </main>
