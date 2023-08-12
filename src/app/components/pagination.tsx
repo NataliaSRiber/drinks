@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import React, { ChangeEvent, Fragment, useEffect, useState } from 'react'
 import Button from './button'
 
 function getPageElements(drinks: any, page: number, elementsPerPage: number) {
@@ -72,7 +72,8 @@ export default function Pagination(props: any) {
         <div className="col-span-2 row-start-2 flex items-center justify-center gap-5">
           {numberOfPagesArray.map((pageNumber) => {
             if (numberOfPages > 6) {
-              if (pageNumber > 5 && pageNumber < numberOfPages) return <></>
+              if (pageNumber > 5 && pageNumber < numberOfPages)
+                return <Fragment key={pageNumber}></Fragment>
 
               return (
                 <div
