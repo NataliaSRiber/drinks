@@ -9,10 +9,7 @@ Para a construção desse site foi utilizada a api pública The CocktailDb que p
 ## Stacks de Desenvolvimento
 
 <div>
-  <a href="https://javascript.info/">
-    <img src="https://img.shields.io/badge/javascript-339933?style=for-the-badge&logo=javascript&color=black" />
-  </a>
-    <a href="https://typescript.info/">
+  <a href="https://typescript.info/">
     <img src="https://img.shields.io/badge/typescript-339933?style=for-the-badge&logo=typescript&color=black" />
   </a>
   <a href="https://pt-br.reactjs.org/docs/getting-started.html">
@@ -21,7 +18,7 @@ Para a construção desse site foi utilizada a api pública The CocktailDb que p
   <a href="https://tailwindcss.com/docs">
     <img src="https://img.shields.io/badge/TailwindCSS-339933?style=for-the-badge&logo=tailwind-css&color=black" />
   </a>
-    <a href="https://Next-black.com/docs">
+  <a href="https://Next-black.com/docs">
     <img src="https://img.shields.io/badge/Next.js-339933?style=for-the-badge&logo=next.js&color=black" />
   </a>
 </div>
