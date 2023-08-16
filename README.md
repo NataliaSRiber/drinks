@@ -1,8 +1,9 @@
-<h1 align="center">Drinks website template</h1>
+<h1 align="center">Cocktails Revenues</h1>
 
 ## Descrição
-Template criado no intuito de praticar os conhecimentos adquiridos em Next.js e React. 
-Foi utilizada a api pública The CocktailDb que pode ser encontrada <a href="https://www.thecocktaildb.com/api.php" target="_blank">aqui<a/>:
+Um site totalmente responsivo que apresenta receitas de coquetéis e drinks. Além disso, o usuário pode pesquisar bebidas por nome ou categoria. Este aplicativo também contém recurso de paginação.
+
+Para a construção desse site foi utilizada a api pública The CocktailDb que pode ser encontrada <a href="https://www.thecocktaildb.com/api.php" target="_blank">aqui<a/>:
 <br><br>
 
 ## Stacks de Desenvolvimento
@@ -26,6 +27,12 @@ Foi utilizada a api pública The CocktailDb que pode ser encontrada <a href="htt
 </div>
 <br>
 
+# A aplicação em nuvem
+
+Acesse a aplicação alocada no Vercel por <a href="https://drinks-website.vercel.app/"> aqui <a/>.
+
+<br>  
+
 ## Rodando a aplicação localmente
 ### Requisitos
 
@@ -48,3 +55,9 @@ Johann Munzlinger - https://github.com/jmlinger
 <br>
 Natalia de Souza - https://github.com/NataliaSRiber
 <br>
+
+## Status
+
+<h3> 
+	🚧  Em andamento  🚧
+</h3>
