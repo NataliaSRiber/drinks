@@ -1,28 +1,44 @@
-import { Idrink } from "../interfaces/Drink";
+import Image from 'next/image'
+import { IFilteredDrinks } from '../interfaces/Drink'
+import Link from 'next/link'
+import Button from './button'
 
-export interface IAppProps{
-  drinksData: Idrink[]
+export interface IAppProps {
+  drinksData?: IFilteredDrinks[]
 }
 
-export default function Card({drinksData}: IAppProps) {
-  console.log(drinksData)
-  return (       
-    <div className='flex flex-row w-screen items-center mt-60 flex-wrap justify-center gap-10'>
-    {drinksData.length > 0 ? (drinksData.map(({strAlcoholic, strDrink, idDrink, strDrinkThumb}) => (
-      <div key={idDrink} className='relative w-[260px] md:w-[300px] h-[400px] flex justify-center items-center	bg-black before:absolute before:w-[150px] before:h-[140%] before:bg-gradient-to-b from-blue-500 to-fuchsia-800 before:animate-spin-slow overflow-hidden rounded-2xl after:absolute after:inset-1 after:bg-newblue-950 flex-col cursor-pointer gap-y-6'>
-        <h1 className='md:text-4xl text-2xl text-white bold relative z-10 font-bold'>{strDrink}</h1>
-        <div  className='w-full relative z-10 flex items-center justify-center'>
-          <img src={strDrinkThumb} alt='drink-image' className='w-1/2 h-32 rounded-lg'/>
+export default function Card({ drinksData }: IAppProps) {
+  return (
+    <div className="flex w-screen flex-row flex-wrap items-center justify-center gap-10 pt-12">
+      {drinksData?.map(({ strDrink, idDrink, strDrinkThumb }) => (
+        <div
+          key={idDrink}
+          className="relative flex h-[450px] w-[260px] flex-col items-center justify-evenly gap-y-4 overflow-hidden rounded-2xl bg-black from-purpleneon-500 to-pinkneon-500 before:absolute before:h-[140%] before:w-[150px] before:animate-spin-slow before:bg-gradient-to-b after:absolute after:inset-1 after:bg-newblue-950 md:w-[300px]"
+        >
+          <h1 className="bold relative z-10 w-full px-3 text-center text-2xl font-bold text-white md:text-3xl">
+            {strDrink}
+          </h1>
+          <div className="relative z-10 flex h-40 w-2/3 items-center justify-center">
+            <Image
+              src={strDrinkThumb}
+              priority={true}
+              placeholder="blur"
+              blurDataURL={strDrinkThumb}
+              width={200}
+              height={200}
+              alt="drink-image"
+              className="rounded-lg object-contain"
+            />
+          </div>
+          <div className="z-10 mt-4 flex items-center justify-center rounded-lg border border-b-4 border-purpleneon-500 p-2">
+            <Link href={`/details/${idDrink}`}>
+              <Button className="border-none bg-purpleneon-500 p-0 text-base font-semibold drop-shadow-9xl md:text-lg">
+                More informations
+              </Button>
+            </Link>
+          </div>
         </div>
-        <div className='flex items-center justify-center z-10 rounded-lg p-2 mt-4 border-b-4 border border-green-500 hover:border-yellow-200'>
-          <button className='text-white font-semibold md:text-lg text-base'>More informations</button>
-        </div>
-      </div>
-    )
-    ))
-    :
-    <h1 className='text-white'>Loading ...</h1>
-  }
-  </div>
+      ))}
+    </div>
   )
 }
